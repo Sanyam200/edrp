@@ -1,0 +1,12 @@
+
+<html>
+    <head>
+    <title>eCampus</title>
+    <meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    </head>
+    <frameset rows="*,100%" framespacing="0" border="0" frameborder="0">
+      <frame name="header1" scrolling="no" noresize src="#">
+      <frame name="main1" src="default1.asp" marginwidth="0" marginheight="0" scrolling="auto">
+    </frameset>
+    </html>

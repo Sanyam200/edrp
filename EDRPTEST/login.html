@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="./bootstrap-4.5.2-dist/css/bootstrap.css">
+    <script type="text/javascript" src="login.js"></script>
+    <script src="three.r119.min.js"></script>
+    <script src="vanta.birds.min.js"></script>
+</head>
+
+<body>
+    <style> #abc {
+        height: 750px;
+    }</style>
+    <div id="abc">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand"
+            href="#">EDRP@SSTC</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" onclick="home()"><img src="./icons8-home-page-80.png" width="30" height="30"> Home<span class="sr-only">(current)</span></a>
+
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true"><img src="./icons8-info-512.png" width="30" height="30">My Info</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">Personal Info</a>
+                        <a class="dropdown-item" href="#">FeedBack</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><img src="./icons8-class-80.png" width="30" height="30">I-classes</a></li>
+                <li class="nav-item">
+                    <a class="nav-link bg-dark" href="#" onclick="lib()"><img src="./library.png" width="30" height="30">Library</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><img src="./icons8-feedback-80.png" width="25" height="25">FeedBack</a></li>
+                    
+                <li class="nav-item">
+                    <a class="nav-link bg-dark " href="#"><img src="./icons8-secured-letter-64.png" width="25" height="25">Notice</a></li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+            </form>
+        </div>
+    </nav><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 " id="home" style="display: none;">
+                <div class="card opacity: .4; ">
+                    <div class="card-body">
+                        <p class="text mr-auto ">
+                            <a class="link" href="#"><img src="./Folder-Users-icon.png" width="50" height="50">Hostel</a><br>
+                            <a class="link" href="#"> <img src="./Folder-Users-icon.png" width="50" height="50">Accounts</a><br>
+                            <a class="link" href="#"><img src="./Folder-Users-icon.png" width="50" height="50"> Assignments</a><br>
+                            <a class="link" href="#"><img src="./Folder-Users-icon.png" width="50" height="50"> Test</a><br>
+                            <a class="link" href="#"><img src="./Folder-Users-icon.png" width="50" height="50"> Course Content</a><br>
+                            <a class="link" href="#"><img src="./Folder-Users-icon.png" width="50" height="50"> Attendance</a><br>
+                            <a class="link" href="#"><img src="./Folder-Users-icon.png" width="50" height="50"> Monday-CT-Test Result</a><br>
+                            <a class="link" href="#"><img src="./Folder-Users-icon.png" width="50" height="50"> Grievances</a><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="lib" style="display: none;">
+                <div class="card ">
+                    <div class="card-body">
+                        <p class="text mr-auto ">
+                            <a class="link" href="#" onclick="libcon()"><img src="./Folder-Users-icon.png" width="50" height="50">Book Search</a><br>
+                            <a class="link" href="#" onclick="digital()"><img src="./Folder-Users-icon.png" width="50" height="50">Digital</a><br>
+                            <a class="link" href="#" onclick="dues()"> <img src="./Folder-Users-icon.png" width="50" height="50">Dues</a><br>
+                            <a class="link" href="#" onclick="trans()">  <img src="./Folder-Users-icon.png" width="50" height="50"> Transaction</a><br>
+                            <a class="link" href="#" onclick="about()"> <img src="./Folder-Users-icon.png" width="50" height="50">About Central Library</a><br>
+                            <a class="link" href="#" onclick="elib()"><img src="./Folder-Users-icon.png" width="50" height="50"> E@Library</a><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-9 border border-primary mr-auto" id="book" style="display: none;">
+
+             >
+                    <div class="card ">
+                        <div class="card-body">
+                            <p class="text-center">
+                                <a class="link" href="#">Book Search</a><br><br>
+
+                            </p>
+                        </div>
+                    </div>
+                
+                <div id="digital" style="display: none;">
+                    <div class="card ">
+                        <div class="card-body">
+                            <p class="text-center">
+                                <a class="link" href="#">Digital </a><br><br>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="dues" style="display: none;">
+                    <div class="card ">
+                        <div class="card-body">
+                            <p class="text-center">
+                                <a class="link" href="#">Dues</a><br><br>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="trans" style="display: none;">
+                    <div class="card ">
+                        <div class="card-body">
+                            <p class="text-center">
+                                <a class="link" href="#">Transaction</a><br><br>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="about" style="display: none;">
+                    <div class="card ">
+                        <div class="card-body">
+                            <p class="text-center">
+                                <a class="link" href="#">About Central Library</a><br><br>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="elib" style="display: none;">
+                    <div class="card ">
+                        <div class="card-body">
+                            <p class="text-center">
+                                <a class="link" href="#">E@Library</a><br><br>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+   
+
+    <script type="text/javascript" src="/bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+    <script>
+        VANTA.BIRDS({
+          el: "#abc",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          backgroundColor: 0x1a597a,
+          color1: 0x7d4040,
+          color2: 0x498a98
+        })
+        </script>
+</body>
+
+</html>

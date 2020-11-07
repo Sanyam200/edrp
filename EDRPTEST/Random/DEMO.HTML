@@ -1,0 +1,915 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+ <!--[if lt IE 9]>
+ <script src="js/html5shiv.js"></script>
+ <script src="js/respond.min.js"></script>
+<![endif]-->
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>	  
+<script src="js/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>   
+
+<script type="text/javascript" src="jquery.alphanum.js"></script>
+
+
+<title>SSTC@edrp</title>
+<script language="JavaScript">
+var dragapproved=false
+var minrestore=0
+var initialwidth,initialheight
+var ie5=document.all&&document.getElementById
+var ns6=document.getElementById&&!document.all
+
+function iecompattest(){
+return (!window.opera && document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+
+function drag_drop(e){
+if (ie5&&dragapproved&&event.button==1){
+document.getElementById("dwindow").style.left=tempx+event.clientX-offsetx+"px"
+document.getElementById("dwindow").style.top=tempy+event.clientY-offsety+"px"
+}
+else if (ns6&&dragapproved){
+document.getElementById("dwindow").style.left=tempx+e.clientX-offsetx+"px"
+document.getElementById("dwindow").style.top=tempy+e.clientY-offsety+"px"
+}
+}
+
+function initializedrag(e){
+offsetx=ie5? event.clientX : e.clientX
+offsety=ie5? event.clientY : e.clientY
+document.getElementById("dwindowcontent").style.display="none" //extra
+tempx=parseInt(document.getElementById("dwindow").style.left)
+tempy=parseInt(document.getElementById("dwindow").style.top)
+
+dragapproved=true
+document.getElementById("dwindow").onmousemove=drag_drop
+}
+
+function loadwindow(url,width,height){
+if (!ie5&&!ns6)
+window.open(url,"","width=width,height=height,scrollbars=1")
+else{
+document.getElementById("dwindow").style.display=''
+document.getElementById("dwindow").style.width=initialwidth=width+"px"
+document.getElementById("dwindow").style.height=initialheight=height+"px"
+document.getElementById("dwindow").style.left=(screen.width-width) / 2
+//document.getElementById("dwindow").style.top=ns6? window.pageYOffset*1+30+"px" : iecompattest().scrollTop*1+30+"px"
+document.getElementById("dwindow").style.top=(screen.height-height) / 2
+document.getElementById("cframe").src=url
+}
+}
+
+function maximize(){
+if (minrestore==0){
+minrestore=1 //maximize window
+document.getElementById("maxname").setAttribute("src","restore.gif")
+document.getElementById("dwindow").style.width=ns6? window.innerWidth-20+"px" : iecompattest().clientWidth+"px"
+document.getElementById("dwindow").style.height=ns6? window.innerHeight-20+"px" : iecompattest().clientHeight+"px"
+}
+else{
+minrestore=0 //restore window
+document.getElementById("maxname").setAttribute("src","max.gif")
+document.getElementById("dwindow").style.width=initialwidth
+document.getElementById("dwindow").style.height=initialheight
+}
+document.getElementById("dwindow").style.left=ns6? window.pageXOffset+"px" : iecompattest().scrollLeft+"px"
+document.getElementById("dwindow").style.top=ns6? window.pageYOffset+"px" : iecompattest().scrollTop+"px"
+}
+
+function closeit(){
+document.getElementById("dwindow").style.display="none"
+}
+
+function stopdrag(){
+dragapproved=false;
+document.getElementById("dwindow").onmousemove=null;
+document.getElementById("dwindowcontent").style.display="" //extra
+}
+
+function wxp(){
+self.location.reload();
+}
+
+function closeit(){
+document.getElementById("dwindow").style.display="none"
+}
+
+
+</script><script language="JavaScript">
+var message="";
+function clickIE4(){
+if (event.button==2){
+alert(message);
+return false;
+}
+}
+
+function clickNS4(e){
+if (document.layers||document.getElementById&&!document.all){
+if (e.which==2||e.which==3){
+alert(message);
+return false;
+}
+}
+}
+
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=clickNS4;
+}
+else if (document.all&&!document.getElementById){
+document.onmousedown=clickIE4;
+}
+
+document.oncontextmenu=new Function("alert(message);return false")
+function sendinfo1x()
+{
+
+        var url="o0xx00x0x0x0x00xx___/default.asp";
+        frm_login.method="post";
+        frm_login.target="main1";
+        frm_login.action=url;			
+	     frm_login.submit();
+	     return true;
+}
+function sendinfo11x()
+{
+        var url="o0xx00x0x0x0x00xx___/default.asp";
+        frm_login.method="post";
+        frm_login.target="_top";
+        frm_login.action=url;			
+	     frm_login.submit();
+	     return true;
+}
+
+function sendinfo_c(form)
+{
+//alert("copy");
+        var url="../challan_print@@@@@@_xy@@_c_b/default.asp";
+        form.method="post";
+        form.action=url;	
+        form.target="main1";		
+        form.submit();
+        return true;
+}
+function sendinfo_c_e()
+{
+ var url="../../../../challan_print@@@@@@_xy@@_c_b/default_bysstc.asp";
+ frmdetail.method="post";
+ frmdetail.action=url;	
+ //frmdetail.target="_blank";
+ //frmdetail.submit();
+ frmdetail.target="MyNewWindow";	
+ document.frmdetail.submit(MyNewWindow=window.open(url,'MyNewWindow','width=700,height=480,stat us=no,location=no,menubar=no,scrollbars=yes,resizable=no'));	
+ //document.frmdetail.submit();
+ //document.frmdetail.submit(loadwindow(url,600,400));
+	     return true;
+}
+
+ function ck(form)
+    {
+      if(form.uname.value==""){
+       alert("Fill Username Please");
+       form.uname.focus();
+       return false;
+    }
+    if(form.password.value=="") {
+       alert("Fill Password Please");
+       form.password.focus();
+       return false;
+    }
+ if(form.cmbsession.value=="") {
+       alert("Select Session Please");
+       form.cmbsession.focus();
+       return false;
+    }
+
+      sendinfo1x();
+
+    }
+    
+    function cks(form)
+    {
+    if(form.uname.value==""){
+       document.getElementById('zx').innerHTML="Fill Username";
+       form.uname.focus();
+       return false;
+    }
+    if(form.password.value=="") {    
+       document.getElementById('zx').innerHTML="Fill Password";
+       form.password.focus();
+       return false;
+    }
+ if(form.cmbsession.value=="") {
+       alert("Select Session Please");
+       form.cmbsession.focus();
+       return false;
+    }
+
+      sendinfo11x();
+
+    }
+
+ function ckstudchallan(form)
+    {
+  if(form.studid.value=="")
+{
+    alert("Fill Student-ID");    
+     form.studid.focus();
+     return false;
+    }
+      sendinfo_c(form);
+    }
+
+ function ckstudchallan_e(form)
+    {
+
+  if(form.txtadmissionno.value=="")
+{
+    alert("Fill Student-ID");    
+     form.txtadmissionno.focus();
+     return false;
+    }
+      sendinfo_c_e();
+    }
+function handleKeyPress(e,form)
+{
+document.getElementById('x1').innerHTML="";
+	var key=e.keyCode || e.which;
+		if (key==13){
+			if(form.uname.value==""){
+       			alert("Fill Username Please");
+       			form.uname.focus();
+       			return false;
+    			}
+			if(form.password.value=="") {
+       			alert("Fill Password Please");
+       			form.password.focus();
+       			return false;
+    			}
+    			
+	//sendinfo1();
+	   } 			
+
+}
+
+function submitinfo_hostel()
+{
+var b_info=0;
+ var url="../../../../challan_print@@@@@@_xy@@_c_b/hostelchallan.asp";
+ frmdetail.method="post";
+ frmdetail.action=url;	
+ frmdetail.target="MyNewWindow";	
+ document.frmdetail.submit(MyNewWindow=window.open(url,'MyNewWindow','width=700,height=480,stat us=no,location=no,menubar=no,scrollbars=yes,resizable=no'));	
+ return true;
+}
+
+function sendinfo_c_e()
+{
+ var url="../../../../challan_print@@@@@@_xy@@_c_b/default_bysstc.asp";
+ frmdetail.method="post";
+ frmdetail.action=url;	
+ //frmdetail.target="_blank";
+ //frmdetail.submit();
+ frmdetail.target="MyNewWindow";	
+ document.frmdetail.submit(MyNewWindow=window.open(url,'MyNewWindow','width=700,height=480,stat us=no,location=no,menubar=no,scrollbars=yes,resizable=no'));	
+ //document.frmdetail.submit();
+ //document.frmdetail.submit(loadwindow(url,600,400));
+	     return true;
+}
+
+
+
+
+
+
+
+
+function handleKeyPressx(e,form)
+{
+document.getElementById('x1').innerHTML="";
+	var key=e.keyCode || e.which;
+		if (key==13){
+			if(form.studid.value==""){
+       			alert("Fill Student-ID");
+       			form.studid.focus();
+       			return false;
+    			}    			
+	sendinfo_c();
+	   } 			
+
+}
+</script>
+ 
+<script type="text/javascript">  
+ $scope.preventPaste = function(e){
+   e.preventDefault();
+   return false;
+};
+</script>
+<script language=JavaScript>
+var message="";
+function clickIE4(){
+if (event.button==2){
+alert(message);
+return false;
+}
+}
+
+function clickNS4(e){
+if (document.layers||document.getElementById&&!document.all){
+if (e.which==2||e.which==3){
+alert(message);
+return false;
+}
+}
+}
+
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=clickNS4;
+}
+else if (document.all&&!document.getElementById){
+document.onmousedown=clickIE4;
+}
+document.oncontextmenu=new Function("alert(message);return false")
+</script>
+
+
+<script>
+function ckstudchallan_x(x_p)
+{
+	return false;
+}// function close
+
+function mission()
+{
+var link_m;
+ link_m="showmission.asp";  
+ loadwindow(link_m,670,360);	
+}// function close
+</script>
+	
+		<script type="text/javascript">
+			$(function() {
+				var _scroll = {
+					delay: 1000,
+					easing: 'linear',
+					items: 1,
+					duration: 0.07,
+					timeoutDuration: 0,
+					pauseOnHover: 'immediate'
+				};
+				$('#ticker-1').carouFredSel({
+					width: 1000,
+					align: false,
+					items: {
+						width: 'variable',
+						height: 35,
+						visible: 1
+					},
+					scroll: _scroll
+				});
+
+				$('#ticker-2').carouFredSel({
+					width: 1000,
+					align: false,
+					circular: false,
+					items: {
+						width: 'variable',
+						height: 35,
+						visible: 2
+					},
+					scroll: _scroll
+				});
+
+				//	set carousels to be 100% wide
+				$('.caroufredsel_wrapper').css('width', '100%');
+
+				//	set a large width on the last DD so the ticker won't show the first item at the end
+				$('#ticker-2 dd:last').width(2000);
+			});
+			///////////////////////////////////
+function showpdf(){	
+var lnk;
+var myRefxw_p;
+var height = screen.height;
+var width = screen.width;
+var x = (screen.width - width) / 2;
+var y = (screen.height - height) / 2;
+var features;
+var url="s.asp";
+features = "height=" + height + ",width=" + width + ",left="+ x + ",top=" + y;
+features += ",menubar=no,resizable=no,titlebar=no,scrollbars=no ,status=no,toolbar=no,menubar=no,location=no";
+ lnk="pdfshow.asp";
+window.frm_login.method="POST";
+window.frm_login.target="myRefxw_p";
+window.frm_login.action=lnk;
+document.frm_login.submit(myRefxw_p = window.open('','myRefxw_p',features));
+myRefxw_p.focus();	
+return true;	
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////
+function showpdf1(){	
+var lnk;
+var myRefxw_p;
+var height = screen.height;
+var width = screen.width;
+var x = (screen.width - width) / 2;
+var y = (screen.height - height) / 2;
+var features;
+var url="s.asp";
+features = "height=" + height + ",width=" + width + ",left="+ x + ",top=" + y;
+features += ",menubar=no,resizable=no,titlebar=no,scrollbars=no ,status=no,toolbar=no,menubar=no,location=no";
+ lnk="pdfshow1.asp";
+window.frm_login.method="POST";
+window.frm_login.target="myRefxw_p";
+window.frm_login.action=lnk;
+document.frm_login.submit(myRefxw_p = window.open('','myRefxw_p',features));
+myRefxw_p.focus();	
+return true;	
+	
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////
+function showpdf2(){	
+var lnk;
+var myRefxw_p;
+var height = screen.height;
+var width = screen.width;
+var x = (screen.width - width) / 2;
+var y = (screen.height - height) / 2;
+var features;
+var url="s.asp";
+features = "height=" + height + ",width=" + width + ",left="+ x + ",top=" + y;
+features += ",menubar=no,resizable=no,titlebar=no,scrollbars=no ,status=no,toolbar=no,menubar=no,location=no";
+ lnk="pdfshow2.asp";
+window.frm_login.method="POST";
+window.frm_login.target="myRefxw_p";
+window.frm_login.action=lnk;
+document.frm_login.submit(myRefxw_p = window.open('','myRefxw_p',features));
+myRefxw_p.focus();		
+return true;	
+
+}
+
+		</script>
+	<script>
+$(document).ready( function() {
+    $("#aboutus").on("click", function() {
+     	$("#myModal1").modal();
+        $("#mex").load("feespage.asp");
+   }
+    
+
+    );
+////////////////////////////////////////////////////////////////////
+     $("#vision").on("click", function() {
+     	//$("#myModal").modal();
+        $("#mex").load("showvision.asp");
+   }
+    
+
+    );
+/////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+     $("#nptel").on("click", function() {
+     	//$("#myModal").modal();
+        $("#mex").load("clip.html");
+   }
+    
+
+    );
+
+////////////////////////////////////////////////////////////////////
+     $("#mission").on("click", function() {
+     	//$("#myModal").modal();
+        $("#mex").load("showmission.asp");
+   }
+    
+
+    );
+/////////////////////////////////////////////////////////////////////
+     $("#policy").on("click", function() {
+     	//$("#myModal").modal();
+        $("#mex").load("pdfshow.asp");
+   }
+    
+
+    );
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+
+});
+
+</script>
+<script>
+function zx()
+{
+//document.getElementById("aboutus").click();
+}
+</script>
+<style type="text/css">
+		
+
+			#wrapper {
+			    position:fixed;	
+				margin-top: -1px;	
+						
+				left: 0;			
+				width: 100%;
+				height: 40px;			
+				
+			}
+			#wrapper h3 {
+				font-size: 20px;
+				text-align: center;
+			}
+			
+			#wrapper > div {
+				background-color: #606367;
+				
+				border-top: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+				width: 100%;
+				height: 25px;
+				padding: 8px 0;
+				overflow: hidden;
+			}
+			#wrapper > div.first {
+				border-bottom: none;
+			}
+			
+			#wrapper dl {
+				display: block;
+				margin: 0;
+			}
+			#wrapper dt, #wrapper dd {
+				display: block;
+				float: left;
+				margin: 10 10px;
+				padding: 15px 10px;
+			}
+			#wrapper dt {
+				background-color: #f77;
+				color: #fff;
+			}
+			#wrapper dd {
+				color: #333;
+				margin-right: 50px;
+			}
+
+			code {
+				font-style: italic;
+			}
+			
+			#donate-spacer {
+				height: 100%;
+			}
+			#donate {
+				border-top: 1px solid #999;
+				width: 750px;
+				padding: 50px 75px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			#donate p, #donate form {
+				margin: 0;
+				float: left;
+			}
+			#donate p {
+				width: 650px;
+			}
+			#donate form {
+				width: 100px;
+			}
+		</style>
+
+<style type="text/css">
+/* Background Color */
+/* Rounded Corner */
+.tb5 {
+	border:2px solid #456879;
+	border-radius:10px;
+	height: 22px;
+	width: 230px;
+}
+.auto-style4 {
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: medium;
+}
+.auto-style7 {
+	font-size: medium;
+}
+.auto-style8 {
+	color: #FFFFFF;
+}
+.auto-style9 {
+	color: #EEA236;
+}
+.auto-style10 {
+	font-weight: bold;
+	font-size: x-small;
+	color: #D2322D;
+}
+.auto-style11 {
+	color: #AC2925;
+}
+.auto-style12 {
+	font-weight: bold;
+}
+</style>
+<script type="text/javascript">
+$(function() {
+blinkeffect('#aboutus');
+})
+function blinkeffect(selector) {
+$(selector).fadeOut('fast', function() {
+$(this).fadeIn('slow', function() {
+blinkeffect(this);
+});
+});
+}
+</script>
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+    .modal-content iframe{
+        margin: 0 auto;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    /* Get iframe src attribute value i.e. YouTube video url
+    and store it in a variable */
+    var url = $("#cartoonVideo").attr('src');
+    
+    /* Remove iframe src attribute on page load to
+    prevent autoplay in background */
+    $("#cartoonVideo").attr('src', '');
+	
+	/* Assign the initially stored url back to the iframe src
+    attribute when modal is displayed */
+    $("#myModal").on('shown.bs.modal', function(){
+        $("#cartoonVideo").attr('src', url);
+    });
+    
+    /* Assign empty url value to the iframe src attribute when
+    modal hide, which stop the video playing */
+    $("#myModal").on('hide.bs.modal', function(){
+        $("#cartoonVideo").attr('src', '');
+    });
+});
+</script>
+</head>
+
+
+<body style="background-color: #606367" onload="zx();">
+	<!-- header-section-starts -->
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" class="img-responsive" alt="" /></a>
+			</div>
+			<div class="header-right">
+				
+				<span class="menu"></span>
+				<div class="top-menu">
+					<ul>                                              
+						<li><a class="active" href="/edrpsstc/" target="_top">Home</a></li>
+						<li><a  href="/edrpsstc/" target="_top">Important-Email's</a></li>
+						<li><a  href="/edrpsstc/" target="_top">Notice</a></li>
+						<li><a  href ="#" id="aboutus"  data-toggle="modal"><b>-</b> [<font color="pink"><b>-</b></font> ]</a></li>
+					</ul>
+				</div>
+				<!-- script for menu -->
+				<script>
+				$( "span.menu" ).click(function() {
+				  $( ".top-menu" ).slideToggle( "slow", function() {
+				    // Animation complete.
+				  });
+				});
+			</script>
+			<!-- script for menu -->
+
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- header-section-ends -->	
+	  <form name="frm_login" >               
+               
+	<div class="banner" style="border:1px solid #606367">               
+		<div class="container" style="height: 261px">               
+			<div class="banner-info">               
+			<div ><span class="auto-style4">User-Id</span><br>               
+				<input type="text" class="tb5" value="" autocomplete="off" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" style="height: 29px; width: 138px;"  name="uname" onkeypress="handleKeyPress(event,this.form)">               
+				<br><span class="auto-style4">Password</span><br>               
+				<input type="password" class="tb5" value="" autocomplete="off" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" style="height: 29px; width: 139px;"   name="password" onkeypress="handleKeyPress(event,this.form)">               
+				<br><span class="auto-style4">Session</span><br>               
+				<input type="text" name="cmbsession" class="tb5" style="height: 20px; width: 138px;" value="JUL-20" readonly size="11">			               
+				</div>               
+				<a href="#" class="btn btn-1 btn-1d" onclick="ck(frm_login);" style="left: 0px; top: 0px; width: 143px">Login</a>               
+			</div>               
+		</div>               
+	</div>               
+	<div class="content">		               
+		<div id="wrapper">               
+			<div class="first" style="height: 60px">               
+			<dl id="ticker-1" >               
+		       
+				</dl>               
+			</div>               
+			</div>               
+		               
+		</div>               
+	</form>               
+	<div class="footer text-center" style="background-color: #0000;">               
+		<div class="copyright" style="height: 105px">                
+		<p style="font face=Arial; size=1;">.</p>               
+			               
+			<p style="font face=Arial; size=1; color=#FFFFFF">			               
+			 <a  href ="#" id="vision"  data-toggle="modal" data-target="#myModal"><i>Vision</i></a> |                
+			 <a href ="#" id="mission"  data-toggle="modal" data-target="#myModal"><i>Mission</i></a> |                
+			 <a href ="#" id="policy"  data-toggle="modal" data-target="#myModal" ><i>Policies</i></a> |			                 
+			 </p>               
+               
+			<p style="font face=Arial; size=1; color=#FFFFFF">               
+			 <a href="#"><i>Anti Ragging</i></a> | <a href="#"><i>Women Grievanance Redressal Cell</i></a>			               
+			 </p>               
+			<p style="font face=Arial; size=1; color=#FFFFFF">               
+			<span class="auto-style8">Developer: edprcell@sstc.ac.in</span></p>               
+			<p style="font face=Arial; size=1; color=#FFFFFF">               
+			 &nbsp;</p>               
+		 </div>	               
+		 	               
+		<div class="copyright">                
+			<span class="auto-style8">                
+			<br>                
+			</span><br><br>                
+		</div>                
+	 </div>               
+	 <!-- Modal -->               
+<div class="container">	               
+  <div class="modal fade" id="myModal" role="dialog">               
+    <div class="modal-dialog" style="width:100%;">                   
+      <!-- Modal content-->               
+      <div class="modal-content">               
+        <div class="modal-header">               
+          <button type="button" class="close" data-dismiss="modal">&times;</button>               
+          <h4 class="modal-title">SSTC@Info</h4>               
+        </div>               
+        <div  class="modal-body" id="mex">                   
+          <p>-</p>               
+        </div>               
+        <div class="modal-footer">               
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>               
+        </div>               
+      </div>               
+                     
+    </div>               
+  </div>               
+   <div class="modal fade" id="myModal1" role="dialog">               
+    <div class="modal-dialog" style="width:100%;">                   
+      <!-- Modal content-->               
+      <div class="modal-content">               
+        <div class="modal-header">               
+          <button type="button" class="close" data-dismiss="modal">&times;</button>               
+          <h4 class="modal-title">Fees Details</h4>               
+        </div>               
+        <div  class="modal-body" id="mex">                     
+                       
+                       
+                       
+          <p>               
+          <form name="frmfees" >                
+<tr>               
+              <td width="6" height="51" valign="middle" align="center"><font face="Tahoma" size="1">&nbsp;&nbsp;</font></td>               
+              <td width="100%" height="51" valign="middle" align="center" bgcolor="#CCCCCC">               
+              <font face="Arial" size="2">               
+              <b>Updation in Progress....... Please Try Later</font><font color="#FFFFFF"><font face="Arial" size="1"><b><font color="#FF0000" size="2" face="MS Sans Serif">&nbsp;<br>               
+              </font>               
+              </b></font></font>
+                            
+              </td>               
+            </tr>               
+</form>               
+               
+          </p>               
+        </div>               
+        <div class="modal-footer">               
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>               
+        </div>               
+      </div>               
+                     
+    </div>               
+  </div>               
+  	               
+	</div>               
+<!-- Modal-end -->               
+</body>                
+<script type="text/javascript">
+      <!-- Hide the script from old browsers --
+    function clickback () {
+     //alert("please don't use the Back button");
+     history.forward(1);
+      }
+      clickback();
+    // --End Hiding Here -->
+  </script>     
+
+               
+</html>                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+
+
